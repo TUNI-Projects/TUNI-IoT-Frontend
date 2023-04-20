@@ -1,5 +1,6 @@
 import "./css/App.css";
 import HeartRecordView from "./component/heart";
+import Dashboard from "./component/dashboard";
 
 function App() {
   return (
@@ -10,6 +11,7 @@ function App() {
         <hr style={{ backgroundColor: "white", height: "3px" }} />
         {/* old record view */}
         {/* <HeartRecordView></HeartRecordView> */}
+        <Dashboard></Dashboard>
 
       </div>
     </div>
