@@ -2,7 +2,6 @@ import "./../css/App.css";
 import React from "react";
 import CanvasJSReact from "../assets/canvasjs.react";
 
-
 class HeartRecordView extends React.Component {
   constructor(props) {
     super(props);
@@ -62,7 +61,7 @@ class HeartRecordView extends React.Component {
         title: "Time",
         gridThickness: 1,
         labelAngle: -90,
-        valueFormatString: "hh:mm:ss"
+        valueFormatString: "hh:mm:ss",
       },
       axisY: {
         title: "Heart Rate (in BPM)",
@@ -74,18 +73,17 @@ class HeartRecordView extends React.Component {
           dataPoints: this.state.data,
         },
       ],
-    }
+    };
     // const CanvasJS = CanvasJSReact.CanvasJS;
     const CanvasJSChart = CanvasJSReact.CanvasJSChart;
-
 
     return (
       <div className="row">
         <CanvasJSChart
           options={options}
-        /* onRef={ref => this.chart = ref} */
+          /* onRef={ref => this.chart = ref} */
         />
-      </div >
+      </div>
     );
   }
 }

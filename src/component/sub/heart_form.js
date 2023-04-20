@@ -1,31 +1,74 @@
 import React from "react";
 import { Form, Button } from "react-bootstrap";
-
+import moment from "moment";
 
 class HeartForm extends React.Component {
+  constructor(props) {
+    super(props);
+    let now = moment().format("DD-MMM-YYYY, hh:mm a");
+    this.state = {
+      start_date: null,
+      end_date: null,
+    };
+  }
 
-    render() {
-        return (
-            <div>
-                <p className="h4"> Heart Rate Data </p>
-                <Form>
-                    <Form.Group controlId="start_date">
-                        <Form.Label>Start Date</Form.Label>
-                        <Form.Control type="date" name="start_date" placeholder="Start Date"></Form.Control>
-                    </Form.Group>
+  start_date_handler(event) {
+    this.setState({
+      start_date: event.target.value,
+    });
+  }
 
-                    <Form.Group controlId="end_date" className="space">
-                        <Form.Label>End Date</Form.Label>
-                        <Form.Control type="date" name="end_date" placeholder="End Date"></Form.Control>
-                    </Form.Group>
-                    <br />
-                    <Button className="" variant="success" type="submit">
-                        Show Data
-                    </Button>
-                </Form>
-            </div>
-        )
-    }
+  end_date_handler(event) {
+    this.setState({
+      end_date: event.target.value,
+    });
+  }
+
+  showHeartData(event) {
+    event.preventDefault();
+  }
+
+  componentDidMount() {}
+
+  render() {
+    console.log(this.state.start_date);
+    console.log(this.state.end_date);
+    return (
+      <div>
+        <p className="h4"> Heart Rate Data </p>
+        <Form>
+          <Form.Group controlId="start_date">
+            <Form.Label>Start Date</Form.Label>
+            <Form.Control
+              type="datetime-local"
+              name="start_date"
+              placeholder="Start Date"
+              onChange={this.start_date_handler.bind(this)}
+            ></Form.Control>
+          </Form.Group>
+
+          <Form.Group controlId="end_date" className="space">
+            <Form.Label>End Date</Form.Label>
+            <Form.Control
+              type="datetime-local"
+              name="end_date"
+              placeholder="End Date"
+              onChange={this.end_date_handler.bind(this)}
+            ></Form.Control>
+          </Form.Group>
+          <br />
+          <Button
+            className=""
+            style={{ width: "100%" }}
+            variant="success"
+            onClick={this.showHeartData.bind(this)}
+          >
+            Show Data
+          </Button>
+        </Form>
+      </div>
+    );
+  }
 }
 
 export default HeartForm;
