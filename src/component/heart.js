@@ -1,6 +1,7 @@
 import "./../css/App.css";
 import React from "react";
-import HeartSplineGraph from "./sub/heart_graph";
+import CanvasJSReact from "../assets/canvasjs.react";
+
 
 class HeartRecordView extends React.Component {
   constructor(props) {
@@ -35,8 +36,9 @@ class HeartRecordView extends React.Component {
               y: payload[i]["heart"],
             });
           }
+
           this.setState({
-            data: [...this.state.data, fabrication],
+            data: fabrication,
           });
         },
         (error) => {
@@ -50,10 +52,40 @@ class HeartRecordView extends React.Component {
   }
 
   render() {
+    const options = {
+      zoomEnabled: true,
+      animationEnabled: true,
+      title: {
+        text: "Heart Rate",
+      },
+      axisX: {
+        title: "Time",
+        gridThickness: 1,
+        labelAngle: -90,
+        valueFormatString: "hh:mm:ss"
+      },
+      axisY: {
+        title: "Heart Rate (in BPM)",
+      },
+      data: [
+        {
+          type: "area",
+          xValueType: "dateTime",
+          dataPoints: this.state.data,
+        },
+      ],
+    }
+    // const CanvasJS = CanvasJSReact.CanvasJS;
+    const CanvasJSChart = CanvasJSReact.CanvasJSChart;
+
+
     return (
       <div className="row">
-        <HeartSplineGraph data_point={this.state.data}></HeartSplineGraph>
-      </div>
+        <CanvasJSChart
+          options={options}
+        /* onRef={ref => this.chart = ref} */
+        />
+      </div >
     );
   }
 }
