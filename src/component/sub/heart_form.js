@@ -1,11 +1,9 @@
 import React from "react";
 import { Form, Button } from "react-bootstrap";
-import moment from "moment";
 
 class HeartForm extends React.Component {
   constructor(props) {
     super(props);
-    let now = moment().format("DD-MMM-YYYY, hh:mm a");
     this.state = {
       start_date: null,
       end_date: null,
@@ -26,9 +24,9 @@ class HeartForm extends React.Component {
 
   showHeartData(event) {
     event.preventDefault();
+    // how to upload child data
   }
 
-  componentDidMount() {}
 
   render() {
     console.log(this.state.start_date);

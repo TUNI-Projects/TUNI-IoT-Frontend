@@ -78,12 +78,10 @@ class HeartRecordView extends React.Component {
     const CanvasJSChart = CanvasJSReact.CanvasJSChart;
 
     return (
-      <div className="row">
-        <CanvasJSChart
+      <CanvasJSChart
           options={options}
           /* onRef={ref => this.chart = ref} */
-        />
-      </div>
+        ></CanvasJSChart>
     );
   }
 }
