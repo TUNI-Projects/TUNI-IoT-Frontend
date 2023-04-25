@@ -94,7 +94,7 @@ class HeartRecordView extends React.Component {
 
     return (
       <div>
-        <hr style={{ height: "5px", backgroundColor: "white" }} />
+        <hr style={{ height: "3px", backgroundColor: "white" }} />
         {this.state.isError && (
           <div className="row">
             <p className="h5" style={{ color: "whitesmoke" }} align="center">

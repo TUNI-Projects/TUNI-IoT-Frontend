@@ -94,9 +94,10 @@ class Dashboard extends React.Component {
       // don't add anything in the parent div
       <div>
         <Navigation status={this.showForm}></Navigation>
+        <hr style={{ height: "3px", backgroundColor: "white" }} />
         {/* ---------------------------------------- */}
 
-        <div className="row" style={{paddingTop: "10px"}}>
+        <div className="row" style={{paddingTop: "5px"}}>
           <div className="col-md-3"></div>
           <div className="col-md-6 white-col">
             {this.state.showHeart && (
