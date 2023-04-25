@@ -8,10 +8,10 @@ function App() {
         <h1 className="h1" align="center" style={{ color: "whitesmoke", paddingTop: "10px" }}> Smart Shenanigans</h1>
         <h3 className="h4" align="center" style={{ color: "whitesmoke", }}> Our IoT Project</h3>
         <hr style={{ backgroundColor: "white", height: "3px" }} />
-        {/* old record view */}
-        {/* <HeartRecordView></HeartRecordView> */}
-        <Dashboard className=""></Dashboard>
+      </div>
 
+      <div className="container-fluid" style={{marginLeft: "10px", marginRight: "10px"}}>
+      <Dashboard className=""></Dashboard>
       </div>
     </div>
   );

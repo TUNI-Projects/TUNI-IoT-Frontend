@@ -1,14 +1,33 @@
 import React from "react";
 import { Form, Button } from "react-bootstrap";
 
-class HeartForm extends React.Component {
+class InputForm extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
       startDate: null,
       endDate: null,
-      heartState: this.props.heartState,
+      source: this.props.source,
+      title: null,
+      parentState: this.props.parentState,
     };
+  }
+
+  updateTitle() {
+    if (this.state.source === "heart") {
+      this.setState({
+        title: "Heart Rate Data",
+      });
+    } else if (this.state.source === "acc") {
+      this.setState({
+        title: "Acc Data",
+      });
+    }
+    else if (this.state.source === "gyro") {
+      this.setState({
+        title: "Gyro Data",
+      });
+    }
   }
 
   startDateHandler(event) {
@@ -26,19 +45,18 @@ class HeartForm extends React.Component {
   showHeartData(event) {
     event.preventDefault();
     // how to upload child data
-    const data = [
-      this.state.startDate,
-      this.state.endDate,
-      true,
-    ]
-    this.state.heartState(data);
+    const data = [this.state.startDate, this.state.endDate];
+    this.state.parentState(data);
   }
 
+  componentDidMount() {
+    this.updateTitle();
+  }
 
   render() {
     return (
       <div>
-        <p className="h4"> Heart Rate Data </p>
+        <p className="h4"> {this.state.title} </p>
         <Form>
           <Form.Group controlId="start_date">
             <Form.Label>Start Date</Form.Label>
@@ -74,4 +92,4 @@ class HeartForm extends React.Component {
   }
 }
 
-export default HeartForm;
+export default InputForm;
