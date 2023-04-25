@@ -1,7 +1,8 @@
 import React from "react";
 import "../css/component.css";
 import InputForm from "./sub/form";
-import HeartRecordView from "./heart";
+import HeartRecordView from "./sub/heart";
+import Navigation from "./sub/navigation";
 
 class Dashboard extends React.Component {
   constructor(props) {
@@ -9,13 +10,41 @@ class Dashboard extends React.Component {
     this.state = {
       startDate: null,
       endDate: null,
+      // these values are for graph
       isHeart: false,
       isAcc: false,
       isGyro: false,
+      // these values are for input form
+      showHeart: true,
+      showGyro: false,
+      showAcc: false,
     };
     this.showHeartData = this.showHeartData.bind(this);
     this.showAccData = this.showAccData.bind(this);
     this.showGyroData = this.showGyroData.bind(this);
+    this.showForm = this.showForm.bind(this);
+  }
+
+  showForm(state) {
+    if (state === "heart") {
+      this.setState({
+        showHeart: true,
+        showGyro: false,
+        showAcc: false,
+      });
+    } else if (state === "acc") {
+      this.setState({
+        showHeart: false,
+        showGyro: false,
+        showAcc: true,
+      });
+    } else if (state === "gyro") {
+      this.setState({
+        showHeart: false,
+        showGyro: true,
+        showAcc: false,
+      });
+    }
   }
 
   showHeartData(data) {
@@ -64,31 +93,33 @@ class Dashboard extends React.Component {
     return (
       // don't add anything in the parent div
       <div>
-        <div className="row">
-          {/* this is the filtering portion */}
-          <div className="col-md-4 white-col">
-            {/* heart */}
-            <InputForm
-              parentState={this.showHeartData}
-              source="heart"
-            ></InputForm>
-          </div>
+        <Navigation status={this.showForm}></Navigation>
+        {/* ---------------------------------------- */}
 
-          <div className="col-md-4 white-col">
-            {/* acc */}
-            <InputForm
-              parentState={this.showAccData}
-              source="acc"
-            ></InputForm>
-            </div>
+        <div className="row" style={{paddingTop: "10px"}}>
+          <div className="col-md-3"></div>
+          <div className="col-md-6 white-col">
+            {this.state.showHeart && (
+              <InputForm
+                parentState={this.showHeartData}
+                source="heart"
+              ></InputForm>
+            )}
 
-          <div className="col-md-4 white-col"> 
-          {/* gyro */}
-          <InputForm
-              parentState={this.showGyroData}
-              source="gyro"
-            ></InputForm>
+            {this.state.showAcc && (
+              <InputForm
+                parentState={this.showAccData}
+                source="acc"
+              ></InputForm>
+            )}
+            {this.state.showGyro && (
+              <InputForm
+                parentState={this.showGyroData}
+                source="gyro"
+              ></InputForm>
+            )}
           </div>
+          <div className="col-md-3"></div>
         </div>
 
         <div className="row">

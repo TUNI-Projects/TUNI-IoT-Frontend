@@ -1,6 +1,6 @@
-import "./../css/App.css";
+import "./../../css/App.css";
 import React from "react";
-import CanvasJSReact from "../assets/canvasjs.react";
+import CanvasJSReact from "../../assets/canvasjs.react";
 
 class HeartRecordView extends React.Component {
   constructor(props) {
