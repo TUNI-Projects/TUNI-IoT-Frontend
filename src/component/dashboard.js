@@ -3,6 +3,7 @@ import "../css/component.css";
 import InputForm from "./sub/form";
 import HeartRecordView from "./sub/heart";
 import Navigation from "./sub/navigation";
+import AccRecordView from "./sub/acc";
 
 class Dashboard extends React.Component {
   constructor(props) {
@@ -97,7 +98,7 @@ class Dashboard extends React.Component {
         <hr style={{ height: "3px", backgroundColor: "white" }} />
         {/* ---------------------------------------- */}
 
-        <div className="row" style={{paddingTop: "5px"}}>
+        <div className="row" style={{ paddingTop: "5px" }}>
           <div className="col-md-3"></div>
           <div className="col-md-6 white-col">
             {this.state.showHeart && (
@@ -134,6 +135,18 @@ class Dashboard extends React.Component {
                 startDate={this.state.startDate}
                 endDate={this.state.endDate}
               ></HeartRecordView>
+            </div>
+          )}
+
+          {this.state.isAcc && (
+            <div
+              className=""
+              style={{ paddingTop: "10px", paddingBottom: "20px" }}
+            >
+              <AccRecordView
+                startDate={this.state.startDate}
+                endDate={this.state.endDate}
+              ></AccRecordView>
             </div>
           )}
         </div>

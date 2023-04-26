@@ -10,6 +10,7 @@ class InputForm extends React.Component {
       source: this.props.source,
       title: null,
       parentState: this.props.parentState,
+      errorMessage: null,
     };
   }
 
@@ -22,8 +23,7 @@ class InputForm extends React.Component {
       this.setState({
         title: "Acc Data",
       });
-    }
-    else if (this.state.source === "gyro") {
+    } else if (this.state.source === "gyro") {
       this.setState({
         title: "Gyro Data",
       });
@@ -45,8 +45,19 @@ class InputForm extends React.Component {
   showHeartData(event) {
     event.preventDefault();
     // how to upload child data
-    const data = [this.state.startDate, this.state.endDate];
-    this.state.parentState(data);
+
+    if (this.state.startDate === null) {
+      this.setState({
+        errorMessage: "You have to set a start date!",
+      });
+    } else if (this.state.endDate === null) {
+      this.setState({
+        errorMessage: "You have to set an end date!",
+      });
+    } else {
+      const data = [this.state.startDate, this.state.endDate];
+      this.state.parentState(data);
+    }
   }
 
   componentDidMount() {
@@ -87,6 +98,15 @@ class InputForm extends React.Component {
             Show Data
           </Button>
         </Form>
+
+        {this.state.errorMessage && (
+          <div>
+            <hr />
+            <p className="h3" align="center"
+            style={{color: "red"}}
+            > Error: {this.state.errorMessage}</p>
+          </div>
+        )}
       </div>
     );
   }
