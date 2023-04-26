@@ -17,7 +17,7 @@ class HeartRecordView extends React.Component {
 
   getData() {
     const url =
-      "http://172.105.117.206:9889/api/records/?choice=heart&start_date=" +
+      "https://hello.ibtehaz.xyz/api/records/?choice=heart&start_date=" +
       this.state.startDate +
       "&end_date=" +
       this.state.endDate;

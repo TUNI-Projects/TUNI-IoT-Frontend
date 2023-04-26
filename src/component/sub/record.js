@@ -17,7 +17,7 @@ class RecordView extends React.Component {
 
   getData() {
     const url =
-      "http://172.105.117.206:9889/api/records/?choice=" +
+      "https://hello.ibtehaz.xyz/api/records/?choice=" +
       this.state.source +
       "&start_date=" +
       this.state.startDate +
