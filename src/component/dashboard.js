@@ -3,7 +3,7 @@ import "../css/component.css";
 import InputForm from "./sub/form";
 import HeartRecordView from "./sub/heart";
 import Navigation from "./sub/navigation";
-import AccRecordView from "./sub/acc";
+import RecordView from "./sub/record";
 
 class Dashboard extends React.Component {
   constructor(props) {
@@ -143,10 +143,10 @@ class Dashboard extends React.Component {
               className=""
               style={{ paddingTop: "10px", paddingBottom: "20px" }}
             >
-              <AccRecordView
+              <RecordView
                 startDate={this.state.startDate}
                 endDate={this.state.endDate}
-              ></AccRecordView>
+              ></RecordView>
             </div>
           )}
         </div>

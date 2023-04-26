@@ -2,7 +2,7 @@ import "./../../css/App.css";
 import React from "react";
 import TableView from "../tableview";
 
-class AccRecordView extends React.Component {
+class RecordView extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
@@ -107,4 +107,4 @@ class AccRecordView extends React.Component {
   }
 }
 
-export default AccRecordView;
+export default RecordView;
