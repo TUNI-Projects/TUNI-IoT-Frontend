@@ -6,10 +6,10 @@ class RecordView extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      base_url: null,
       data: [],
       startDate: new Date(this.props.startDate) / 1000,
       endDate: new Date(this.props.endDate) / 1000,
+      source: this.props.source,
       errorMessage: null,
       isError: false,
     };
@@ -17,14 +17,15 @@ class RecordView extends React.Component {
 
   getData() {
     const url =
-      "http://172.105.117.206:9889/api/records/?choice=acc&start_date=" +
+      "http://172.105.117.206:9889/api/records/?choice=" +
+      this.state.source +
+      "&start_date=" +
       this.state.startDate +
       "&end_date=" +
       this.state.endDate;
 
     const requestOptions = {
       method: "GET",
-      credentials: "same-origin",
     };
 
     fetch(url, requestOptions)
@@ -41,7 +42,7 @@ class RecordView extends React.Component {
             });
           } else {
             this.setState({
-              errorMessage: "There's not enough data to draw a graph!",
+              errorMessage: "There's not enough data!",
               isError: true,
             });
           }
@@ -85,18 +86,36 @@ class RecordView extends React.Component {
                   color: "whitesmoke",
                 }}
               >
-                <tr>
-                  <th scope="col">ID</th>
-                  <th scope="col">Acc X</th>
-                  <th scope="col">Acc Y</th>
-                  <th scope="col">Acc Z</th>
-                  <th scope="col">Logged At</th>
-                </tr>
+                {this.state.source === "acc" && (
+                  <tr>
+                    <th scope="col">ID</th>
+                    <th scope="col">Acc X</th>
+                    <th scope="col">Acc Y</th>
+                    <th scope="col">Acc Z</th>
+                    <th scope="col">Logged At</th>
+                  </tr>
+                )}
+
+                {this.state.source === "gyro" && (
+                  <tr>
+                    <th scope="col">ID</th>
+                    <th scope="col">Gyro X</th>
+                    <th scope="col">Gyro Y</th>
+                    <th scope="col">Gyro Z</th>
+                    <th scope="col">Logged At</th>
+                  </tr>
+                )}
               </thead>
 
               <tbody>
                 {this.state.data.map((value, index) => {
-                  return <TableView entry={value} key={index}></TableView>;
+                  return (
+                    <TableView
+                      entry={value}
+                      key={index}
+                      source={this.state.source}
+                    ></TableView>
+                  );
                 })}
               </tbody>
             </table>

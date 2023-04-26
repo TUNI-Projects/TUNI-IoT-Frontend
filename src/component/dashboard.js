@@ -146,6 +146,20 @@ class Dashboard extends React.Component {
               <RecordView
                 startDate={this.state.startDate}
                 endDate={this.state.endDate}
+                source={"acc"}
+              ></RecordView>
+            </div>
+          )}
+
+          {this.state.isGyro && (
+            <div
+              className=""
+              style={{ paddingTop: "10px", paddingBottom: "20px" }}
+            >
+              <RecordView
+                startDate={this.state.startDate}
+                endDate={this.state.endDate}
+                source={"gyro"}
               ></RecordView>
             </div>
           )}
