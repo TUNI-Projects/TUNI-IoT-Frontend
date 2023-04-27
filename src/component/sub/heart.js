@@ -6,7 +6,6 @@ class HeartRecordView extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      base_url: null,
       data: [],
       startDate: new Date(this.props.startDate) / 1000,
       endDate: new Date(this.props.endDate) / 1000,
@@ -29,7 +28,8 @@ class HeartRecordView extends React.Component {
 
     fetch(url, requestOptions)
       .then((res) => Promise.all([res.status, res.json()]))
-      .then(([status, result]) => {
+      .then(
+        ([status, result]) => {
           if (status === 200) {
             let payload = result["payload"];
             let fabrication = []; // this will be added on state.
