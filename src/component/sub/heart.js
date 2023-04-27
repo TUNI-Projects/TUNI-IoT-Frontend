@@ -28,35 +28,45 @@ class HeartRecordView extends React.Component {
     };
 
     fetch(url, requestOptions)
-      .then((res) => res.json())
-      .then(
-        (result) => {
-          let payload = result["payload"];
-          let fabrication = []; // this will be added on state.
+      .then((res) => Promise.all([res.status, res.json()]))
+      .then(([status, result]) => {
+          if (status === 200) {
+            let payload = result["payload"];
+            let fabrication = []; // this will be added on state.
 
-          for (let i = 0; i < payload.length; i++) {
-            const created_on = new Date(payload[i]["created_on"]);
+            for (let i = 0; i < payload.length; i++) {
+              const created_on = new Date(payload[i]["created_on"]);
 
-            fabrication.push({
-              x: created_on.getTime(),
-              y: payload[i]["heart"],
-            });
-          }
-          if (fabrication.length !== 0) {
-            this.setState({
-              data: fabrication,
-              rrorMessage: null,
-              isError: false,
-            });
+              fabrication.push({
+                x: created_on.getTime(),
+                y: payload[i]["heart"],
+              });
+            }
+            if (fabrication.length !== 0) {
+              this.setState({
+                data: fabrication,
+                rrorMessage: null,
+                isError: false,
+              });
+            } else {
+              this.setState({
+                errorMessage: "There's not enough data to draw a graph!",
+                isError: true,
+              });
+            }
           } else {
+            console.log(result);
             this.setState({
-              errorMessage: "There's not enough data to draw a graph!",
+              errorMessage: result["message"],
               isError: true,
             });
           }
         },
         (error) => {
-          console.log(error);
+          this.setState({
+            errorMessage: error.message,
+            isError: true,
+          });
         }
       );
   }
@@ -98,7 +108,7 @@ class HeartRecordView extends React.Component {
         {this.state.isError && (
           <div className="row">
             <p className="h5" style={{ color: "whitesmoke" }} align="center">
-              There's not enough data!
+              {this.state.errorMessage}
             </p>
           </div>
         )}

@@ -29,26 +29,36 @@ class RecordView extends React.Component {
     };
 
     fetch(url, requestOptions)
-      .then((res) => res.json())
+      .then((res) => Promise.all([res.status, res.json()]))
       .then(
-        (result) => {
-          let payload = result["payload"];
+        ([status, result]) => {
+          if (status === 200) {
+            let payload = result["payload"];
 
-          if (payload.length !== 0) {
-            this.setState({
-              data: payload,
-              errorMessage: null,
-              isError: false,
-            });
+            if (payload.length !== 0) {
+              this.setState({
+                data: payload,
+                errorMessage: null,
+                isError: false,
+              });
+            } else {
+              this.setState({
+                errorMessage: "There's not enough data!",
+                isError: true,
+              });
+            }
           } else {
             this.setState({
-              errorMessage: "There's not enough data!",
+              errorMessage: result.message,
               isError: true,
             });
           }
         },
         (error) => {
-          console.log(error);
+          this.setState({
+            errorMessage: error.message,
+            isError: true,
+          });
         }
       );
   }
@@ -64,7 +74,7 @@ class RecordView extends React.Component {
         {this.state.isError && (
           <div className="row">
             <p className="h5" style={{ color: "whitesmoke" }} align="center">
-              There's not enough data!
+              {this.state.errorMessage}
             </p>
           </div>
         )}
