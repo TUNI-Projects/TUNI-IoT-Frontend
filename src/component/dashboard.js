@@ -22,7 +22,7 @@ class Dashboard extends React.Component {
       showAcc: false,
 
       // live data
-      liveData: {},
+      liveData: null,
     };
     this.showHeartData = this.showHeartData.bind(this);
     this.showAccData = this.showAccData.bind(this);

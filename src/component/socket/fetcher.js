@@ -4,7 +4,7 @@ import useWebSocket, { ReadyState } from "react-use-websocket";
 export const WebSocketDemo = ({ onDataReceived }) => {
   //Public API that will echo messages sent to it back to the client
   const [socketUrl, setSocketUrl] = useState(
-    "ws://localhost:8000/ws/last_data/"
+    "wss://hello.ibtehaz.xyz/ws/last_data/"
   );
   
   const { sendMessage, lastMessage, readyState } = useWebSocket(socketUrl);
