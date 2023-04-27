@@ -4,6 +4,7 @@ import InputForm from "./sub/form";
 import HeartRecordView from "./sub/heart";
 import Navigation from "./sub/navigation";
 import RecordView from "./sub/record";
+import { WebSocketDemo } from "./socket/fetcher";
 
 class Dashboard extends React.Component {
   constructor(props) {
@@ -19,6 +20,9 @@ class Dashboard extends React.Component {
       showHeart: true,
       showGyro: false,
       showAcc: false,
+
+      // live data
+      liveData: {},
     };
     this.showHeartData = this.showHeartData.bind(this);
     this.showAccData = this.showAccData.bind(this);
@@ -90,11 +94,24 @@ class Dashboard extends React.Component {
     console.log("showGyroData");
   }
 
+  onDataReceived = (payload) => {
+    // console.log("Received data from WebSocketDemo:", data);
+    // Do something with the received data
+    const data = JSON.parse(payload.data);
+    this.setState({
+      liveData: data
+    })
+  };
+
   render() {
     return (
       // don't add anything in the parent div
       <div>
-        <Navigation status={this.showForm}></Navigation>
+        {/* --------- */}
+        {/* this only initiates and run the web socket. */}
+        <WebSocketDemo onDataReceived={this.onDataReceived} />
+        {/* -------- */}
+        <Navigation status={this.showForm} liveData={this.state.liveData}></Navigation>
         <hr style={{ height: "3px", backgroundColor: "white" }} />
         {/* ---------------------------------------- */}
 

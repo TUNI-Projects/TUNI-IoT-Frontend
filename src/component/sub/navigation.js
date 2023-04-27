@@ -9,6 +9,7 @@ class Navigation extends React.Component {
       gyroActive: false,
       accActive: false,
       parentStatus: this.props.status,
+      liveData: this.props.liveData,
     };
   }
 
@@ -47,6 +48,18 @@ class Navigation extends React.Component {
     });
   }
 
+  componentDidUpdate(prevProps) {
+    if (prevProps.liveData !== this.props.liveData) {
+      this.setState({
+        liveData: this.props.liveData,
+      });
+    }
+  }
+
+  timeThingy(timestamp) {
+    return new Date(timestamp * 1000).toLocaleString("en-GB");
+  }
+
   render() {
     return (
       <div
@@ -58,9 +71,20 @@ class Navigation extends React.Component {
             className={this.state.heartActive ? "h2 focus entry" : "h2 entry"}
             align="center"
           >
-            {" "}
             Heart Data
           </p>
+
+          {this.state.liveData && (
+            <div className="row">
+              <div style={{ marginTop: "20px" }}> </div>
+              <p> Last Heart Rate: {this.state.liveData.heart}</p>
+              <p>
+                {" "}
+                Last Fetched At:{" "}
+                {this.timeThingy(this.state.liveData.created_on)}
+              </p>
+            </div>
+          )}
         </div>
 
         <div className="col-md-4" onClick={this.handleAccClick.bind(this)}>
@@ -70,6 +94,21 @@ class Navigation extends React.Component {
           >
             Acc Data
           </p>
+
+          {this.state.liveData && (
+            <div className="row">
+              <div style={{ marginTop: "20px" }}> </div>
+              <p>
+                Last Acc Data: [ x: {this.state.liveData.acc.x}, y:{" "}
+                {this.state.liveData.acc.y}, z: {this.state.liveData.acc.z} ]
+              </p>
+              <p>
+                {" "}
+                Last Fetched At:{" "}
+                {this.timeThingy(this.state.liveData.created_on)}
+              </p>
+            </div>
+          )}
         </div>
 
         <div className="col-md-4" onClick={this.handleGyroClick.bind(this)}>
@@ -79,6 +118,21 @@ class Navigation extends React.Component {
           >
             Gyro Data
           </p>
+
+          {this.state.liveData && (
+            <div className="row">
+              <div style={{ marginTop: "20px" }}> </div>
+              <p>
+                Last Gyro Data: [ x: {this.state.liveData.gyro.x}, y:{" "}
+                {this.state.liveData.gyro.y}, z: {this.state.liveData.gyro.z} ]
+              </p>
+              <p>
+                {" "}
+                Last Fetched At:{" "}
+                {this.timeThingy(this.state.liveData.created_on)}
+              </p>
+            </div>
+          )}
         </div>
       </div>
     );
