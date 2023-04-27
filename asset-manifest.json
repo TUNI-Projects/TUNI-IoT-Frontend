@@ -1,15 +1,15 @@
 {
   "files": {
     "main.css": "/TUNI-IoT-Frontend/static/css/main.12d17626.css",
-    "main.js": "/TUNI-IoT-Frontend/static/js/main.061532b0.js",
+    "main.js": "/TUNI-IoT-Frontend/static/js/main.66410680.js",
     "static/js/787.905fcffb.chunk.js": "/TUNI-IoT-Frontend/static/js/787.905fcffb.chunk.js",
     "index.html": "/TUNI-IoT-Frontend/index.html",
     "main.12d17626.css.map": "/TUNI-IoT-Frontend/static/css/main.12d17626.css.map",
-    "main.061532b0.js.map": "/TUNI-IoT-Frontend/static/js/main.061532b0.js.map",
+    "main.66410680.js.map": "/TUNI-IoT-Frontend/static/js/main.66410680.js.map",
     "787.905fcffb.chunk.js.map": "/TUNI-IoT-Frontend/static/js/787.905fcffb.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.12d17626.css",
-    "static/js/main.061532b0.js"
+    "static/js/main.66410680.js"
   ]
 }
