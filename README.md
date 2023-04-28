@@ -28,6 +28,12 @@ See the section about [deployment](https://facebook.github.io/create-react-app/d
 
 Builds and deploy the app for development/production test in Github pages, (https://tuni-projects.github.io/TUNI-IoT-Frontend/).
 
+## Repositories
+
+* Frontend: (https://github.com/TUNI-Projects/TUNI-IoT-Frontend)
+* Backend: (https://github.com/TUNI-Projects/TUNI-IoT-Backend)
+* Arduino and Raspberry Pi: (https://github.com/TUNI-Projects/TUNI-IoT-Arduino)
+
 ## Contributors
 
 * Jesper Vuoristo (jesper [dot] vuoristo [at] tuni [dot] fi)
