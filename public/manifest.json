@@ -1,6 +1,6 @@
 {
-  "short_name": "React App",
-  "name": "Create React App Sample",
+  "short_name": "Smart Shenanigans",
+  "name": "An IoT Sensor Dashboard for Tampere University Project",
   "icons": [
     {
       "src": "favicon.ico",
