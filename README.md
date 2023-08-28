@@ -1,8 +1,18 @@
-# Smart Shenanigans
+# Smart Shenanigans 🌐🔌
 
-It's an IoT Sensor Dashboard for Tampere University, Internet of Things course project. Project is deployed in Github pages - [Smart Shenanigans](https://tuni-projects.github.io/TUNI-IoT-Frontend/)
+It's an IoT Sensor Dashboard for Tampere University, Internet of Things course project. Project is deployed in GitHub Pages - [Smart Shenanigans](https://tuni-projects.github.io/TUNI-IoT-Frontend/)
 
-## Available Scripts
+## Repositories 📚
+
+* Frontend: [TUNI-IoT-Frontend](https://github.com/TUNI-Projects/TUNI-IoT-Frontend)
+* Backend: [TUNI-IoT-Backend](https://github.com/TUNI-Projects/TUNI-IoT-Backend)
+* Arduino and Raspberry Pi: [TUNI-IoT-Arduino](https://github.com/TUNI-Projects/TUNI-IoT-Arduino)
+
+## Note about Mobile View 📱
+
+Please note that this page is not currently optimized for mobile view. The application's layout and features may not function as expected on smaller screens.
+
+## Available Scripts 🛠️
 
 In the project directory, you can run:
 
@@ -26,15 +36,9 @@ See the section about [deployment](https://facebook.github.io/create-react-app/d
 
 ### `npm run deploy`
 
-Builds and deploy the app for development/production test in Github pages, (https://tuni-projects.github.io/TUNI-IoT-Frontend/).
+Builds and deploys the app for development/production test on GitHub Pages, (<https://tuni-projects.github.io/TUNI-IoT-Frontend/>).
 
-## Repositories
-
-* Frontend: (https://github.com/TUNI-Projects/TUNI-IoT-Frontend)
-* Backend: (https://github.com/TUNI-Projects/TUNI-IoT-Backend)
-* Arduino and Raspberry Pi: (https://github.com/TUNI-Projects/TUNI-IoT-Arduino)
-
-## Contributors
+## Contributors 👥
 
 * Jesper Vuoristo (jesper [dot] vuoristo [at] tuni [dot] fi)
 * Mohammad Asif Ibtehaz (asif [dot] ibtehaz [at] tuni [dot] fi)
