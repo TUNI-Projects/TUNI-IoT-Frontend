@@ -63,8 +63,13 @@ class Navigation extends React.Component {
   render() {
     return (
       <div
-        className="row"
-        style={{ color: "whitesmoke", paddingBottom: "20px" }}
+        className="row pattern1"
+        style={{
+          color: "whitesmoke",
+          paddingBottom: "20px",
+          marginLeft: "20px",
+          marginRight: "20px",
+        }}
       >
         <div className="col-md-4" onClick={this.handleHeartClick.bind(this)}>
           <p

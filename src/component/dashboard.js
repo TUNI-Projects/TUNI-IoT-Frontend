@@ -99,8 +99,8 @@ class Dashboard extends React.Component {
     // Do something with the received data
     const data = JSON.parse(payload.data);
     this.setState({
-      liveData: data
-    })
+      liveData: data,
+    });
   };
 
   render() {
@@ -111,8 +111,16 @@ class Dashboard extends React.Component {
         {/* this only initiates and run the web socket. */}
         <WebSocketDemo onDataReceived={this.onDataReceived} />
         {/* -------- */}
-        <Navigation status={this.showForm} liveData={this.state.liveData}></Navigation>
-        <hr style={{ height: "3px", backgroundColor: "white" }} />
+        <Navigation
+          status={this.showForm}
+          liveData={this.state.liveData}
+        ></Navigation>
+        <hr
+          style={{
+            height: "3px",
+            backgroundColor: "white",
+          }}
+        />
         {/* ---------------------------------------- */}
 
         <div className="row" style={{ paddingTop: "5px" }}>

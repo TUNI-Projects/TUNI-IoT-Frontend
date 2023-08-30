@@ -1,29 +1,29 @@
 .white-col {
-    background-color: aliceblue;
-    border-radius: 5px;
-    align-items: center;
-    padding-top: 10px;
-    padding-bottom: 10px;
-    margin-left: 5px;
-    margin-right: 5px;
+  background-color: aliceblue;
+  border-radius: 5px;
+  align-items: center;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  margin-left: 5px;
+  margin-right: 5px;
 }
 
 .space {
-    padding-top: 5px;
-    padding-bottom: 5px;
+  padding-top: 5px;
+  padding-bottom: 5px;
 }
 
 .focus {
-    text-shadow: whitesmoke;
+  text-shadow: whitesmoke;
 }
 
 .entry:hover {
-    transition-duration: 1s;
-    transition-property: font-size;
-    font-size: 45px;
+  transition-duration: 1s;
+  transition-property: font-size;
+  font-size: 45px;
 }
 
 .entry {
-    transition-duration: 1s;
-    transition-property: font-size;
+  transition-duration: 1s;
+  transition-property: font-size;
 }
