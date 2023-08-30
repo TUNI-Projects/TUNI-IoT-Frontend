@@ -1,6 +1,17 @@
 # Smart Shenanigans 🌐🔌
 
-It's an IoT Sensor Dashboard for Tampere University, Internet of Things course project. Project is deployed in GitHub Pages - [Smart Shenanigans](https://tuni-projects.github.io/TUNI-IoT-Frontend/)
+It's an IoT Sensor Dashboard for Tampere University's Internet of Things course project. The project is deployed on GitHub Pages - [Smart Shenanigans](https://tuni-projects.github.io/TUNI-IoT-Frontend/)
+
+## Project Description 📋
+
+This project revolves around a prototype IoT health monitoring device powered by Raspberry Pi, Arduino, and various sensors including heartbeat and gyro sensors. Its core objective is to capture fundamental health metrics of an individual and display them through a web dashboard. The Raspberry Pi is responsible for gathering data from the Arduino, which houses heartbeat and gyro sensors. This data is then transmitted to the cloud using the CoAP protocol. Subsequently, the collected health data is visualized and accessible on the web dashboard.
+
+### Key Features 🚀
+
+- Integration of Raspberry Pi and Arduino for comprehensive data collection.
+- Utilization of sensors such as heartbeat and gyro sensors.
+- Cloud-based data transmission using the CoAP protocol for remote monitoring.
+- User-friendly web dashboard for clear health data visualization.
 
 ## Repositories 📚
 
@@ -36,7 +47,13 @@ See the section about [deployment](https://facebook.github.io/create-react-app/d
 
 ### `npm run deploy`
 
-Builds and deploys the app for development/production test on GitHub Pages, (<https://tuni-projects.github.io/TUNI-IoT-Frontend/>).
+Builds and deploys the app for development/production test on [GitHub Pages](https://tuni-projects.github.io/TUNI-IoT-Frontend/).
+
+## Important Notice ⚠️
+
+Please be aware that all IoT devices associated with this project were taken offline on April 28, 2023, at 14:00. The project's primary focus is on demonstrating the web dashboard's functionality and its integration with the collected health data.
+
+Feel free to explore the repository and documentation to learn more about the project and its components.
 
 ## Contributors 👥
 

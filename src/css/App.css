@@ -67,3 +67,26 @@
     background-position: 0% 50%;
   }
 }
+
+.logo-github {
+  width: 40px;
+  height: 40px;
+  border-radius: 5px;
+  margin-right: 5px;
+}
+
+
+.btn_github {
+  background-color: #272932;
+  color: whitesmoke;
+  font-weight: bold;
+  border-radius: 10px;
+}
+
+.btn_github:hover {
+  background-color: #283845;
+  color: #1AFFD5;
+  font-weight: bold;
+  border-radius: 10px;
+  border-color: #1AFFD5;
+}
