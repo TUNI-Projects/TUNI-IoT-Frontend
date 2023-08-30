@@ -1,15 +1,16 @@
 {
   "files": {
-    "main.css": "/TUNI-IoT-Frontend/static/css/main.12d17626.css",
-    "main.js": "/TUNI-IoT-Frontend/static/js/main.6168b8c2.js",
+    "main.css": "/TUNI-IoT-Frontend/static/css/main.1ac3a41b.css",
+    "main.js": "/TUNI-IoT-Frontend/static/js/main.5f78c002.js",
     "static/js/787.905fcffb.chunk.js": "/TUNI-IoT-Frontend/static/js/787.905fcffb.chunk.js",
+    "static/media/bg_smart_shenanigans.svg": "/TUNI-IoT-Frontend/static/media/bg_smart_shenanigans.2f2e11ee99dd5a85fe07.svg",
     "index.html": "/TUNI-IoT-Frontend/index.html",
-    "main.12d17626.css.map": "/TUNI-IoT-Frontend/static/css/main.12d17626.css.map",
-    "main.6168b8c2.js.map": "/TUNI-IoT-Frontend/static/js/main.6168b8c2.js.map",
+    "main.1ac3a41b.css.map": "/TUNI-IoT-Frontend/static/css/main.1ac3a41b.css.map",
+    "main.5f78c002.js.map": "/TUNI-IoT-Frontend/static/js/main.5f78c002.js.map",
     "787.905fcffb.chunk.js.map": "/TUNI-IoT-Frontend/static/js/787.905fcffb.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.12d17626.css",
-    "static/js/main.6168b8c2.js"
+    "static/css/main.1ac3a41b.css",
+    "static/js/main.5f78c002.js"
   ]
 }
